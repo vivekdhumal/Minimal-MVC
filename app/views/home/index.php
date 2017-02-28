@@ -19,7 +19,7 @@
 </head>
 <body>
 	<h1>Minimal MVC</h1>
-	<p>This framework is under active development, have no documentation yet.</p>
+	<p>Simple, minimal mvc framework.</p>
 	<?php //echo $data['name']?>
 </body>
 </html>
