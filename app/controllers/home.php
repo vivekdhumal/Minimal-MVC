@@ -1,14 +1,10 @@
 <?php
+use Illuminate\Database\Capsule\Manager as Capsule;
 
 class Home extends Controller
 {
-
 	public function index($name = '')
-	{
-		$user = $this->model('User');
-		$user->name = $name;
-		
-		$this->view('home/index', ['name' => $user->name ]);
+	{		
+		$this->view('home/index');
 	}
-
 }
