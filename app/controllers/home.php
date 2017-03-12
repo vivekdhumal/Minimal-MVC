@@ -6,4 +6,9 @@ class Home extends Controller
 	{
 		$this->render_template('template', 'home/index');
 	}
+	
+	public function about()
+	{
+		$this->render_template('template', 'home/about');
+	}
 }
