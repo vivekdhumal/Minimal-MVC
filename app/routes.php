@@ -1,6 +1,6 @@
 <?php
 
 $router->define([
-	'' => 'home/index',
+	'/' => 'home/index',
 	'about' => 'home/about',
 ]);
