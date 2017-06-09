@@ -11,16 +11,16 @@ class App
 	public function __construct()
 	{
 		require 'Router.php';
-		
+
 		$router = new Router;
 
 		require(__DIR__.'../../routes.php');
 
-		$url = $_GET['url'];
+		$url = isset($_GET['url']) ? $_GET['url'] : '';
 
 		if($router->direct($url)) {
 			$url = $this->parseUrl($router->direct($url));
-		} else {			
+		} else {
 			$url = $this->parseUrl($url);
 		}
 
@@ -50,7 +50,7 @@ class App
 	public function parseUrl($url)
 	{
 		if(isset($url))
-		{ 
+		{
 			return $url = explode('/', filter_var(rtrim($url, '/'), FILTER_SANITIZE_URL));
 		}
 	}
