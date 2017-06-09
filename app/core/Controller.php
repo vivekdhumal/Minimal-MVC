@@ -5,7 +5,7 @@ class Controller
 	public function model($model)
 	{
 		require_once '../app/models/' . $model . '.php';
-		
+
 		return new $model();
 	}
 
@@ -23,9 +23,9 @@ class Controller
 		}
 	}
 
-	public function render_template($template, $view, $data = [])
+	public function render_template($template, $view, $data = [], $renderOnly = true)
 	{
-		$content = $this->view($view, $data, true);
+		$content = $this->view($view, $data, $renderOnly);
 
 		$this->view($template, ['content' => $content]);
 	}
@@ -40,7 +40,7 @@ class Controller
 				extract($data);
 
 			include $filename;
-			
+
 			return ob_get_clean();
 		}
 	    return false;
